@@ -259,7 +259,7 @@ class FlutterContacts {
   /// Opens external contact app to pick an existing contact.
   static Future<Contact?> openExternalPick() async {
     final id = await _channel.invokeMethod('openExternalPick');
-    return id == null ? null : getContact(id);
+    return id == null ? null : getContact(id, withAccounts: true);
   }
 
   /// Opens external contact app to insert a new contact.
